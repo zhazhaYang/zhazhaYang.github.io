@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.zhazhayang.top/"/>
-  <updated>2019-09-07T09:00:03.759Z</updated>
+  <updated>2019-09-07T14:43:18.787Z</updated>
   <id>http://www.zhazhayang.top/</id>
   
   <author>
@@ -17,17 +17,29 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>ios-note</title>
+    <title>ios 知识小点</title>
     <link href="http://www.zhazhayang.top/archives/20190907-ios-note/"/>
     <id>http://www.zhazhayang.top/archives/20190907-ios-note/</id>
     <published>2019-09-07T09:00:03.000Z</published>
-    <updated>2019-09-07T09:00:03.759Z</updated>
+    <updated>2019-09-07T14:43:18.787Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>主要记录ios学习与开发中遇到的小问题</p><h2 id="frame与bounds区别"><a href="#frame与bounds区别" class="headerlink" title="frame与bounds区别"></a>frame与bounds区别</h2><p>frame.origin 当前视图在父视图中的位置<br>bounds.origin 以当前视图左上角为原点构建坐标系，原点的值设置为该值而非(0,0)。影响的是其子视图的位置。</p>]]></content>
     
     <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;主要记录ios学习与开发中遇到的小问题&lt;/p&gt;
+&lt;h2 id=&quot;frame与bounds区别&quot;&gt;&lt;a href=&quot;#frame与bounds
+      
     
     </summary>
     
     
+      <category term="ios" scheme="http://www.zhazhayang.top/categories/ios/"/>
+    
+    
+      <category term="ios" scheme="http://www.zhazhayang.top/tags/ios/"/>
     
   </entry>
   
@@ -90,9 +102,9 @@
     <link href="http://www.zhazhayang.top/archives/20190814-OS-X-HarmonicaApplication/"/>
     <id>http://www.zhazhayang.top/archives/20190814-OS-X-HarmonicaApplication/</id>
     <published>2019-08-14T09:40:09.000Z</published>
-    <updated>2019-09-07T09:31:32.871Z</updated>
+    <updated>2019-09-07T14:43:18.779Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p><a href="/download/Harmonica.dmg">口琴呀 Version 1.0 点击下载</a> 2019-08</p><p><a href="/download/Harmonica-1.1.dmg">口琴呀 Version 1.1 点击下载</a> 2019-09<br>1.修正点击取消会退出应用的bug<br>2.修正有些电脑无法初始化录音的bug</p><h2 id="开发说明"><a href="#开发说明" class="headerlink" title="开发说明"></a>开发说明</h2><p>进行口琴练习的时候，发现使用用纸质曲谱，用手机播放伴奏，用手机录音，挺不方便的，因此想将这些东西集合成一个软件。现在推出第一个版本。后期有机会的话会开发网络功能，提供曲谱、音乐分享等功能，打造口琴圈子。</p><h2 id="功能说明"><a href="#功能说明" class="headerlink" title="功能说明"></a>功能说明</h2><p>1、查看曲谱<br>2、播放伴奏<br>3、听伴奏录音<br>4、录音与伴奏合成音乐<br>5、播放录音</p><h2 id="界面"><a href="#界面" class="headerlink" title="界面"></a>界面</h2><img src="/archives/20190814-OS-X-HarmonicaApplication/harmonica1.png"><p>{}</p>]]></content>
+    <content type="html"><![CDATA[<h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p><a href="/download/Harmonica.dmg">口琴呀 Version 1.0 点击下载</a> 2019-08</p><p><a href="/download/Harmonica-1.1.dmg">口琴呀 Version 1.1 点击下载</a> 2019-09<br>1.修正点击取消会退出应用的bug<br>2.修正有些电脑无法初始化录音的bug</p><h2 id="开发说明"><a href="#开发说明" class="headerlink" title="开发说明"></a>开发说明</h2><p>进行口琴练习的时候，发现使用用纸质曲谱，用手机播放伴奏，用手机录音，挺不方便的，因此想将这些东西集合成一个软件。现在推出第一个版本。后期有机会的话会开发网络功能，提供曲谱、音乐分享等功能，打造口琴圈子。</p><h2 id="功能说明"><a href="#功能说明" class="headerlink" title="功能说明"></a>功能说明</h2><p>1、查看曲谱<br>2、播放伴奏<br>3、听伴奏录音<br>4、录音与伴奏合成音乐<br>5、播放录音</p><h2 id="界面"><a href="#界面" class="headerlink" title="界面"></a>界面</h2><img src="/archives/20190814-OS-X-HarmonicaApplication/harmonica1.png">]]></content>
     
     <summary type="html">
     

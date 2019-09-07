@@ -94,14 +94,18 @@
 
 
 
-  <meta property="og:type" content="article">
-<meta property="og:title" content="ios-note">
+  <meta name="description" content="前言主要记录ios学习与开发中遇到的小问题 frame与bounds区别frame.origin 当前视图在父视图中的位置bounds.origin 以当前视图左上角为原点构建坐标系，原点的值设置为该值而非(0,0)。影响的是其子视图的位置。">
+<meta name="keywords" content="ios">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ios 知识小点">
 <meta property="og:url" content="http://www.zhazhayang.top/archives/20190907-ios-note/index.html">
 <meta property="og:site_name" content="渣渣羊的进击">
+<meta property="og:description" content="前言主要记录ios学习与开发中遇到的小问题 frame与bounds区别frame.origin 当前视图在父视图中的位置bounds.origin 以当前视图左上角为原点构建坐标系，原点的值设置为该值而非(0,0)。影响的是其子视图的位置。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-07T09:00:03.759Z">
+<meta property="og:updated_time" content="2019-09-07T14:43:18.787Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ios-note">
+<meta name="twitter:title" content="ios 知识小点">
+<meta name="twitter:description" content="前言主要记录ios学习与开发中遇到的小问题 frame与bounds区别frame.origin 当前视图在父视图中的位置bounds.origin 以当前视图左上角为原点构建坐标系，原点的值设置为该值而非(0,0)。影响的是其子视图的位置。">
 
 
 
@@ -121,7 +125,7 @@
   };
 </script>
 
-  <title>ios-note | 渣渣羊的进击</title>
+  <title>ios 知识小点 | 渣渣羊的进击</title>
   
 
 
@@ -367,7 +371,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">ios-note
+          <h1 class="post-title" itemprop="name headline">ios 知识小点
 
               
             
@@ -393,12 +397,31 @@
                 
               
 
-              <time title="创建时间：2019-09-07 17:00:03" itemprop="dateCreated datePublished" datetime="2019-09-07T17:00:03+08:00">2019-09-07</time>
+              <time title="创建时间：2019-09-07 17:00:03 / 修改时间：22:43:18" itemprop="dateCreated datePublished" datetime="2019-09-07T17:00:03+08:00">2019-09-07</time>
             </span>
           
 
           
+            
 
+            
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/ios/" itemprop="url" rel="index"><span itemprop="name">ios</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -451,7 +474,9 @@
       
 
       
-        
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>主要记录ios学习与开发中遇到的小问题</p>
+<h2 id="frame与bounds区别"><a href="#frame与bounds区别" class="headerlink" title="frame与bounds区别"></a>frame与bounds区别</h2><p>frame.origin 当前视图在父视图中的位置<br>bounds.origin 以当前视图左上角为原点构建坐标系，原点的值设置为该值而非(0,0)。影响的是其子视图的位置。</p>
+
       
     </div>
 
@@ -471,6 +496,15 @@
     
 
     <footer class="post-footer">
+      
+        
+          
+        
+        <div class="post-tags">
+          
+            <a href="/tags/ios/" rel="tag"># ios</a>
+          
+        </div>
       
 
       
@@ -537,8 +571,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -582,7 +625,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">6</span>
+                      
+                    
+                    <span class="site-state-item-count">7</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -613,7 +658,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">7</span>
+                      
+                    
+                    <span class="site-state-item-count">8</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -647,6 +694,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#frame与bounds区别"><span class="nav-number">2.</span> <span class="nav-text">frame与bounds区别</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
