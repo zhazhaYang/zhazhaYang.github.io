@@ -350,6 +350,194 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.zhazhayang.top/archives/20190718-struct-data-array/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="渣渣羊">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="渣渣羊的进击">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/archives/20190718-struct-data-array/" class="post-title-link" itemprop="url">数组</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-07-18 22:28:11" itemprop="dateCreated datePublished" datetime="2019-07-18T22:28:11+08:00">2019-07-18</time>
+            </span>
+          
+
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-07-20 13:47:01" itemprop="dateModified" datetime="2019-07-20T13:47:01+08:00">2019-07-20</time>
+              </span>
+            
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/数据结构/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+              
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/archives/20190718-struct-data-array/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/archives/20190718-struct-data-array/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>题目来源《剑指Offer》面试题3：数组中重复的数字</p>
+<h2 id="题目2"><a href="#题目2" class="headerlink" title="题目2"></a>题目2</h2><p>在一个长度为n的数组里的所有数字都在0~n-1的范围内，数组中的某些数字是重复的，但不知几个数字重复，也不知道每个数字重复了几次。请找出数组中任意一个重复的数字。<br>实现思想：将与数组下标相同的数字存放到该位置，当发现重复数字时返回<br>算法步骤：<br>1、读取第i个数组元素<br>2、读取的数字与元素下标比较<br>3、<br>（1）不相同时，<br>比较该数字与数组下标为该数字的元素比较，<br>若相同，则该数字为重复数字，返回该数字；<br>若不相同，则交换这两个元素；<br>i不变并重复123<br>（2）相同时，i++并重复123<br>实现代码：<br>C++</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">int checkNumberDuplication(int num[],int length)</span><br><span class="line">&#123;</span><br><span class="line">	if (num == NULL||length&lt;=1)</span><br><span class="line">		return -1;</span><br><span class="line">	for (int i = 0;i &lt; length;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		if (num[i] &gt;= length || num[i] &lt; 0|| num[num[i]]&gt;=length|| num[num[i]] &lt;0)</span><br><span class="line">		&#123;</span><br><span class="line">			cout&lt;&lt; &quot;数组不符合条件！&quot;;</span><br><span class="line">			return -1;</span><br><span class="line">		&#125;</span><br><span class="line">		if (num[i] != i)</span><br><span class="line">		&#123;</span><br><span class="line">			if (num[i] == num[num[i]])</span><br><span class="line">				return num[i];</span><br><span class="line">			else</span><br><span class="line">			&#123;</span><br><span class="line">				int temp;</span><br><span class="line">				temp = num[num[i]];</span><br><span class="line">				num[num[i]]=num[i];</span><br><span class="line">				num[i] = temp;</span><br><span class="line">				i--;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	return -1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="题目3"><a href="#题目3" class="headerlink" title="题目3"></a>题目3</h2><p>不修改数组，在一个长度为n+1的数组里的所有数字都在1~n范围内，所以数组中至少有一个数字是重复的。找出数组中任意一个重复的数字。<br>方案一: 在题目1解法的基础上增加一个长度相等的数组，算法空间复杂度为O(n)<br>方案二：统计1~n/2在数组中出现的次数，大于1~n/2的长度,则重复数字在1~n/2，否则，在n/2到n；重复该步骤找出重复数字，算法时间复杂度O(nlogn)</p>
+<p>方案二实现：<br>算法步骤：<br>1、数字分半<br>2、取前半段，统计其在数组中出现的次数<br>（1）若大于前半段长度，则取前半段进行递归重复12<br>（2）否则，取后半段进行递归重复12<br>3、递归退出条件，当数字长度&lt;=2时，分别统计其在数组中出现的长度，<br>若&gt;=2,则发现记录重复数字并返回；否则，直接返回<br>Objective-C代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">void findRepeatNum(int from, int to, FindRepeat *f)</span><br><span class="line">&#123;</span><br><span class="line">    int times, middle, all_len, middle_len;</span><br><span class="line">    middle = (to + from) / 2;</span><br><span class="line">    all_len = to - from + 1;</span><br><span class="line">    middle_len = middle - from + 1;</span><br><span class="line">    if(all_len &lt;= 2)</span><br><span class="line">    &#123;</span><br><span class="line">        times = [f statisticsTimes:from :from];</span><br><span class="line">        if(times &gt; 1)</span><br><span class="line">        &#123;</span><br><span class="line">            [f setRepeatNum:from];</span><br><span class="line">            return;</span><br><span class="line">        &#125;</span><br><span class="line">        times = [f statisticsTimes:to:to];</span><br><span class="line">        if(times &lt;= 1)</span><br><span class="line">            [f setRepeatNum:0];</span><br><span class="line">        else</span><br><span class="line">            [f setRepeatNum:to];</span><br><span class="line">        return;</span><br><span class="line">    &#125;</span><br><span class="line">    else</span><br><span class="line">    &#123;</span><br><span class="line">        times = [f statisticsTimes:from :middle];</span><br><span class="line">        if(times &gt; middle_len)</span><br><span class="line">            findRepeatNum(from, middle, f);</span><br><span class="line">        else</span><br><span class="line">            findRepeatNum(middle, to, f);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://www.zhazhayang.top/archives/20190717-OS-X-NSTableView/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1159,7 +1347,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-07-16 23:40:19" itemprop="dateModified" datetime="2019-07-16T23:40:19+08:00">2019-07-16</time>
+                <time title="修改时间：2019-09-09 20:42:07" itemprop="dateModified" datetime="2019-09-09T20:42:07+08:00">2019-09-09</time>
               </span>
             
           
@@ -1237,6 +1425,7 @@
 <h2 id="struct与typedef-struct"><a href="#struct与typedef-struct" class="headerlink" title="struct与typedef struct"></a>struct与typedef struct</h2><p>1、C语言中<br>（1）<br>typedef struct<br>{}Stu;<br>声明变量Stu x;<br>（2）<br>typedef struct Student<br>{}Stu;<br>Stu==struct Student，声明变量Stu x;</p>
 <p>2、c++中<br>（1）<br>struct Student<br>{}stu;<br>stu是一个变量，声明变量需要Student x;<br>（2）<br>typedef struct Student<br>{}Stu;<br>Stu==struct Student,声明变量Stu x;</p>
 <h2 id="字符串末尾的’-0’"><a href="#字符串末尾的’-0’" class="headerlink" title="字符串末尾的’/0’"></a>字符串末尾的’/0’</h2><p>声明字符串数组时，长度要+1用于存放结束符’\0’;<br>例：<br>char ch[2];<br>ch[0] = ‘c’;<br>ch[1] = ‘\0’;<br>自动分配数组空间，长度会多1，最后一位是’\0’;<br>例：<br>char ch[] = “Y”; //ch[0]==’Y’,ch[1]==’\0’</p>
+<h2 id="关键字static"><a href="#关键字static" class="headerlink" title="关键字static"></a>关键字static</h2><p>其告知编辑器将变量存储在程序的全局（静态）存储区，而非盏空间。<br>1、将static用于函数的局部变量时，该值可以在多次调用中保持不变。<br>2、将static修饰全局变量时，其只能在当前文件被访问。<br>3、将static用于类的数据成员，该数据成员可以在该类的所有实例中共享。<br>4、static用于类的成员函数，该函数属于类而非对象（在其实例对象中不能访问），因为没有this指针（this指针包含当前对象的地址），而且该函数只能访问static修饰的成员。</p>
 
           
         
@@ -2059,202 +2248,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.zhazhayang.top/archives/20190703-personal-domain/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="渣渣羊">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="渣渣羊的进击">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/archives/20190703-personal-domain/" class="post-title-link" itemprop="url">GitHub Pages绑定个人域名</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-
-          
-          
-          
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-07-03 19:20:31" itemprop="dateCreated datePublished" datetime="2019-07-03T19:20:31+08:00">2019-07-03</time>
-            </span>
-          
-
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-07-14 19:48:20" itemprop="dateModified" datetime="2019-07-14T19:48:20+08:00">2019-07-14</time>
-              </span>
-            
-          
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/搭建博客/" itemprop="url" rel="index"><span itemprop="name">搭建博客</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-              
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-            
-                <span class="post-meta-item-text">评论数：</span>
-                <a href="/archives/20190703-personal-domain/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/archives/20190703-personal-domain/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          <br>
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>实际上有没有个人域名都无所谓，看自己需不需要而已</p>
-<p>第一步：前期准备<br>个人域名，可以到各大域名商购买域名，国内有阿里云、腾讯云等</p>
-<p>第二步：到域名解析的控制平台，添加记录，这里以阿里云为例，如下<br>注：<br>1、若发生冲突，可将@改为www,或者更改解析路线<br>2、最好添加CNAME记录，因为GitHub Pages的ip地址是可能发生变化的（A记录的记录值为IP地址）</p>
-<img src="/archives/20190703-personal-domain/add_record.png">
-
-<p>第三步：在hexo项目的source目录下新建CNAME文件，添加个人域名为内容，不设置CNAME文件<br>注：若上步设置为www则如下图，否则，去掉下图的www.</p>
-<img src="/archives/20190703-personal-domain/cname.png">
-<p>然后执行,清除、再生成并部署</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g -d</span><br></pre></td></tr></table></figure>
-
-<p>第四步：打开Github，打开repository里面的Settings, 在Github Pages的custom domian中填入个人域名</p>
-<img src="/archives/20190703-personal-domain/custom_domain.png">
-
-<p>第五步：浏览器输入域名进行测试，注：第二步的域名的解析需要一定的时间生效</p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2301,7 +2294,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">23</span>
+                    <span class="site-state-item-count">24</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>

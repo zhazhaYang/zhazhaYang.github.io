@@ -102,7 +102,7 @@
 <meta property="og:site_name" content="渣渣羊的进击">
 <meta property="og:description" content="前言本文记录一些简单、细节的C++知识点 int main()、void main()C++:标准定义是int main()int main()与int main(void)都是指没有参数int main(int argc, char* argv[]):    主函数由系统命令调用; argc为参数个数，argv调用时输入的参数，其中argv[0]是程序名C语言int main(void)表示无参">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-16T15:40:19.297Z">
+<meta property="og:updated_time" content="2019-09-09T12:42:07.759Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C++知识小点">
 <meta name="twitter:description" content="前言本文记录一些简单、细节的C++知识点 int main()、void main()C++:标准定义是int main()int main()与int main(void)都是指没有参数int main(int argc, char* argv[]):    主函数由系统命令调用; argc为参数个数，argv调用时输入的参数，其中argv[0]是程序名C语言int main(void)表示无参">
@@ -412,7 +412,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-07-16 23:40:19" itemprop="dateModified" datetime="2019-07-16T23:40:19+08:00">2019-07-16</time>
+                <time title="修改时间：2019-09-09 20:42:07" itemprop="dateModified" datetime="2019-09-09T20:42:07+08:00">2019-09-09</time>
               </span>
             
           
@@ -496,6 +496,7 @@
 <h2 id="struct与typedef-struct"><a href="#struct与typedef-struct" class="headerlink" title="struct与typedef struct"></a>struct与typedef struct</h2><p>1、C语言中<br>（1）<br>typedef struct<br>{}Stu;<br>声明变量Stu x;<br>（2）<br>typedef struct Student<br>{}Stu;<br>Stu==struct Student，声明变量Stu x;</p>
 <p>2、c++中<br>（1）<br>struct Student<br>{}stu;<br>stu是一个变量，声明变量需要Student x;<br>（2）<br>typedef struct Student<br>{}Stu;<br>Stu==struct Student,声明变量Stu x;</p>
 <h2 id="字符串末尾的’-0’"><a href="#字符串末尾的’-0’" class="headerlink" title="字符串末尾的’/0’"></a>字符串末尾的’/0’</h2><p>声明字符串数组时，长度要+1用于存放结束符’\0’;<br>例：<br>char ch[2];<br>ch[0] = ‘c’;<br>ch[1] = ‘\0’;<br>自动分配数组空间，长度会多1，最后一位是’\0’;<br>例：<br>char ch[] = “Y”; //ch[0]==’Y’,ch[1]==’\0’</p>
+<h2 id="关键字static"><a href="#关键字static" class="headerlink" title="关键字static"></a>关键字static</h2><p>其告知编辑器将变量存储在程序的全局（静态）存储区，而非盏空间。<br>1、将static用于函数的局部变量时，该值可以在多次调用中保持不变。<br>2、将static修饰全局变量时，其只能在当前文件被访问。<br>3、将static用于类的数据成员，该数据成员可以在该类的所有实例中共享。<br>4、static用于类的成员函数，该函数属于类而非对象（在其实例对象中不能访问），因为没有this指针（this指针包含当前对象的地址），而且该函数只能访问static修饰的成员。</p>
 
       
     </div>
@@ -620,7 +621,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">23</span>
+                    <span class="site-state-item-count">24</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -729,7 +730,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#int-main-、void-main"><span class="nav-number">2.</span> <span class="nav-text">int main()、void main()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#int-i-for-与for-int-i"><span class="nav-number">3.</span> <span class="nav-text">int i; for(;;)与for(int i;;)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#i-与-i"><span class="nav-number">4.</span> <span class="nav-text">i++与++i</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#‘-n’与std-endl区别"><span class="nav-number">5.</span> <span class="nav-text">‘\n’与std::endl区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#struct与typedef-struct"><span class="nav-number">6.</span> <span class="nav-text">struct与typedef struct</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字符串末尾的’-0’"><span class="nav-number">7.</span> <span class="nav-text">字符串末尾的’/0’</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#int-main-、void-main"><span class="nav-number">2.</span> <span class="nav-text">int main()、void main()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#int-i-for-与for-int-i"><span class="nav-number">3.</span> <span class="nav-text">int i; for(;;)与for(int i;;)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#i-与-i"><span class="nav-number">4.</span> <span class="nav-text">i++与++i</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#‘-n’与std-endl区别"><span class="nav-number">5.</span> <span class="nav-text">‘\n’与std::endl区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#struct与typedef-struct"><span class="nav-number">6.</span> <span class="nav-text">struct与typedef struct</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字符串末尾的’-0’"><span class="nav-number">7.</span> <span class="nav-text">字符串末尾的’/0’</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关键字static"><span class="nav-number">8.</span> <span class="nav-text">关键字static</span></a></li></ol></div>
             
 
           </div>

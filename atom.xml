@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.zhazhayang.top/"/>
-  <updated>2019-09-07T14:43:18.787Z</updated>
+  <updated>2019-09-10T11:29:42.367Z</updated>
   <id>http://www.zhazhayang.top/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ios本地数据存储:属性列表</title>
+    <link href="http://www.zhazhayang.top/archives/20190910-ios-PropertyList/"/>
+    <id>http://www.zhazhayang.top/archives/20190910-ios-PropertyList/</id>
+    <published>2019-09-10T10:56:01.000Z</published>
+    <updated>2019-09-10T11:29:42.367Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>属性列表是ios本地数据持久化存储方式中的一种。</p><h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><p>1、适用于存储比较轻量的数据<br>2、将静态数据包含在应用中的最佳方法<br>3、支持的数据类型为Foundation中的NSArray、NSDictionary、NSString、NSData、NSDate、NSNumber<br>4、无法将自定义对象序列化到属性列表中</p><h2 id="简单实例"><a href="#简单实例" class="headerlink" title="简单实例"></a>简单实例</h2><img src="/archives/20190910-ios-PropertyList/propertyList.png"><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">import UIKit</span><br><span class="line"></span><br><span class="line">class ViewController: UIViewController &#123;</span><br><span class="line">    @IBOutlet var lineFields: [UITextField]!</span><br><span class="line">    </span><br><span class="line">    override func viewDidLoad() &#123;</span><br><span class="line">        super.viewDidLoad()</span><br><span class="line">        // Do any additional setup after loading the view.</span><br><span class="line">        let fileURL = self.dataFileURL()</span><br><span class="line">        if FileManager.default.fileExists(atPath: fileURL.path!) &#123;</span><br><span class="line">            if let array = NSArray(contentsOf: fileURL as URL) as? [String] &#123; //获取plist中的内容</span><br><span class="line">                for i in 0..&lt;array.count &#123;</span><br><span class="line">                    lineFields[i].text = array[i] </span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        let app = UIApplication.shared</span><br><span class="line">        NotificationCenter.default.addObserver(self, selector: #selector(self.applicationWillResignActive(notification:)), name: UIApplication.willResignActiveNotification, object: app) </span><br><span class="line">        //当应用退出活跃状态时进行保存(进入后台状态)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    @objc func applicationWillResignActive(notification: NSNotification) &#123;</span><br><span class="line">        let fileURL = self.dataFileURL()</span><br><span class="line">        let array = (self.lineFields as NSArray).value(forKey: &quot;text&quot;) as! NSArray</span><br><span class="line">        array.write(to: fileURL as URL, atomically: true) //写入到data.plist</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    func dataFileURL() -&gt; NSURL &#123;</span><br><span class="line">        let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask) //获取应用沙盒中Documents的路径</span><br><span class="line">        </span><br><span class="line">        var url:NSURL?</span><br><span class="line">        url = NSURL(fileURLWithPath: &quot;&quot;)</span><br><span class="line">        url = urls.first!.appendingPathComponent(&quot;data.plist&quot;) as NSURL</span><br><span class="line">        </span><br><span class="line">        return url!</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;属性列表是ios本地数据持久化存储方式中的一种。&lt;/p&gt;
+&lt;h2 id=&quot;特点&quot;&gt;&lt;a href=&quot;#特点&quot; class=&quot;headerli
+      
+    
+    </summary>
+    
+    
+      <category term="ios" scheme="http://www.zhazhayang.top/categories/ios/"/>
+    
+    
+      <category term="ios" scheme="http://www.zhazhayang.top/tags/ios/"/>
+    
+  </entry>
   
   <entry>
     <title>ios 知识小点</title>
@@ -398,9 +425,9 @@
     <link href="http://www.zhazhayang.top/archives/20190710-c-knownledge/"/>
     <id>http://www.zhazhayang.top/archives/20190710-c-knownledge/</id>
     <published>2019-07-10T03:40:19.000Z</published>
-    <updated>2019-07-16T15:40:19.297Z</updated>
+    <updated>2019-09-09T12:42:07.759Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>本文记录一些简单、细节的C++知识点</p><h2 id="int-main-、void-main"><a href="#int-main-、void-main" class="headerlink" title="int main()、void main()"></a>int main()、void main()</h2><p>C++:<br>标准定义是int main()<br>int main()与int main(void)都是指没有参数<br>int main(int argc, char* argv[]):<br>    主函数由系统命令调用; argc为参数个数，argv调用时输入的参数，其中argv[0]是程序名<br>C语言<br>int main(void)表示无参数<br>int main()表示不确定个参数<br>C99标准定义是int main(void)与int main(int argc, char* argv[])</p><p>综合：void main并不推荐，系统无法判断所调用的程序的状态</p><h2 id="int-i-for-与for-int-i"><a href="#int-i-for-与for-int-i" class="headerlink" title="int i; for(;;)与for(int i;;)"></a>int i; for(;;)与for(int i;;)</h2><p>这里是整型i的作用域不同</p><h2 id="i-与-i"><a href="#i-与-i" class="headerlink" title="i++与++i"></a>i++与++i</h2><p>i++是后缀运算<br>例：<br>i = 1;<br>j = i++;<br>这里j结果为1，i为2；<br>先将i的值赋值给j,再做++运算</p><p>num[i++] = num[j–];// 后缀运算，先num[i]=num[j],再i++，j–</p><p>++i是前缀运算<br>例：<br>i = 1;<br>j = ++i;<br>这里j的结果为2，i为2;<br> 先做++运算后，再把i的值赋给j;</p><p> num[++i] = num[–j];// 前缀运算，先++i，–j,再num[i]=num[j]</p><h2 id="‘-n’与std-endl区别"><a href="#‘-n’与std-endl区别" class="headerlink" title="‘\n’与std::endl区别"></a>‘\n’与std::endl区别</h2><p>cout&lt;&lt;endl; == cout&lt;&lt;’\n’&lt;&lt;flush;<br>std::endl是流操作输出换行符并刷新流缓冲区<br>传输数据称为流，cout是传输数据到屏幕，流的缓冲区存满后会自动刷新，需要时可以进行手动刷新。</p><h2 id="struct与typedef-struct"><a href="#struct与typedef-struct" class="headerlink" title="struct与typedef struct"></a>struct与typedef struct</h2><p>1、C语言中<br>（1）<br>typedef struct<br>{}Stu;<br>声明变量Stu x;<br>（2）<br>typedef struct Student<br>{}Stu;<br>Stu==struct Student，声明变量Stu x;</p><p>2、c++中<br>（1）<br>struct Student<br>{}stu;<br>stu是一个变量，声明变量需要Student x;<br>（2）<br>typedef struct Student<br>{}Stu;<br>Stu==struct Student,声明变量Stu x;</p><h2 id="字符串末尾的’-0’"><a href="#字符串末尾的’-0’" class="headerlink" title="字符串末尾的’/0’"></a>字符串末尾的’/0’</h2><p>声明字符串数组时，长度要+1用于存放结束符’\0’;<br>例：<br>char ch[2];<br>ch[0] = ‘c’;<br>ch[1] = ‘\0’;<br>自动分配数组空间，长度会多1，最后一位是’\0’;<br>例：<br>char ch[] = “Y”; //ch[0]==’Y’,ch[1]==’\0’</p>]]></content>
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>本文记录一些简单、细节的C++知识点</p><h2 id="int-main-、void-main"><a href="#int-main-、void-main" class="headerlink" title="int main()、void main()"></a>int main()、void main()</h2><p>C++:<br>标准定义是int main()<br>int main()与int main(void)都是指没有参数<br>int main(int argc, char* argv[]):<br>    主函数由系统命令调用; argc为参数个数，argv调用时输入的参数，其中argv[0]是程序名<br>C语言<br>int main(void)表示无参数<br>int main()表示不确定个参数<br>C99标准定义是int main(void)与int main(int argc, char* argv[])</p><p>综合：void main并不推荐，系统无法判断所调用的程序的状态</p><h2 id="int-i-for-与for-int-i"><a href="#int-i-for-与for-int-i" class="headerlink" title="int i; for(;;)与for(int i;;)"></a>int i; for(;;)与for(int i;;)</h2><p>这里是整型i的作用域不同</p><h2 id="i-与-i"><a href="#i-与-i" class="headerlink" title="i++与++i"></a>i++与++i</h2><p>i++是后缀运算<br>例：<br>i = 1;<br>j = i++;<br>这里j结果为1，i为2；<br>先将i的值赋值给j,再做++运算</p><p>num[i++] = num[j–];// 后缀运算，先num[i]=num[j],再i++，j–</p><p>++i是前缀运算<br>例：<br>i = 1;<br>j = ++i;<br>这里j的结果为2，i为2;<br> 先做++运算后，再把i的值赋给j;</p><p> num[++i] = num[–j];// 前缀运算，先++i，–j,再num[i]=num[j]</p><h2 id="‘-n’与std-endl区别"><a href="#‘-n’与std-endl区别" class="headerlink" title="‘\n’与std::endl区别"></a>‘\n’与std::endl区别</h2><p>cout&lt;&lt;endl; == cout&lt;&lt;’\n’&lt;&lt;flush;<br>std::endl是流操作输出换行符并刷新流缓冲区<br>传输数据称为流，cout是传输数据到屏幕，流的缓冲区存满后会自动刷新，需要时可以进行手动刷新。</p><h2 id="struct与typedef-struct"><a href="#struct与typedef-struct" class="headerlink" title="struct与typedef struct"></a>struct与typedef struct</h2><p>1、C语言中<br>（1）<br>typedef struct<br>{}Stu;<br>声明变量Stu x;<br>（2）<br>typedef struct Student<br>{}Stu;<br>Stu==struct Student，声明变量Stu x;</p><p>2、c++中<br>（1）<br>struct Student<br>{}stu;<br>stu是一个变量，声明变量需要Student x;<br>（2）<br>typedef struct Student<br>{}Stu;<br>Stu==struct Student,声明变量Stu x;</p><h2 id="字符串末尾的’-0’"><a href="#字符串末尾的’-0’" class="headerlink" title="字符串末尾的’/0’"></a>字符串末尾的’/0’</h2><p>声明字符串数组时，长度要+1用于存放结束符’\0’;<br>例：<br>char ch[2];<br>ch[0] = ‘c’;<br>ch[1] = ‘\0’;<br>自动分配数组空间，长度会多1，最后一位是’\0’;<br>例：<br>char ch[] = “Y”; //ch[0]==’Y’,ch[1]==’\0’</p><h2 id="关键字static"><a href="#关键字static" class="headerlink" title="关键字static"></a>关键字static</h2><p>其告知编辑器将变量存储在程序的全局（静态）存储区，而非盏空间。<br>1、将static用于函数的局部变量时，该值可以在多次调用中保持不变。<br>2、将static修饰全局变量时，其只能在当前文件被访问。<br>3、将static用于类的数据成员，该数据成员可以在该类的所有实例中共享。<br>4、static用于类的成员函数，该函数属于类而非对象（在其实例对象中不能访问），因为没有this指针（this指针包含当前对象的地址），而且该函数只能访问static修饰的成员。</p>]]></content>
     
     <summary type="html">
     
@@ -519,36 +546,6 @@
       
       
         &lt;p&gt;第一步：到谷歌搜索控制台验证网站所有权&lt;br&gt;1、打开GOOGLE的Search Console: &lt;a href=&quot;https://search.google.com/&quot; rel=&quot;external nofollow noopener noreferrer&quot; target
-      
-    
-    </summary>
-    
-    
-      <category term="搭建博客" scheme="http://www.zhazhayang.top/categories/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/"/>
-    
-    
-      <category term="Hexo" scheme="http://www.zhazhayang.top/tags/Hexo/"/>
-    
-      <category term="个人博客" scheme="http://www.zhazhayang.top/tags/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>GitHub Pages绑定个人域名</title>
-    <link href="http://www.zhazhayang.top/archives/20190703-personal-domain/"/>
-    <id>http://www.zhazhayang.top/archives/20190703-personal-domain/</id>
-    <published>2019-07-03T11:20:31.000Z</published>
-    <updated>2019-07-14T11:48:20.924Z</updated>
-    
-    <content type="html"><![CDATA[<p>实际上有没有个人域名都无所谓，看自己需不需要而已</p><p>第一步：前期准备<br>个人域名，可以到各大域名商购买域名，国内有阿里云、腾讯云等</p><p>第二步：到域名解析的控制平台，添加记录，这里以阿里云为例，如下<br>注：<br>1、若发生冲突，可将@改为www,或者更改解析路线<br>2、最好添加CNAME记录，因为GitHub Pages的ip地址是可能发生变化的（A记录的记录值为IP地址）</p><img src="/archives/20190703-personal-domain/add_record.png"><p>第三步：在hexo项目的source目录下新建CNAME文件，添加个人域名为内容，不设置CNAME文件<br>注：若上步设置为www则如下图，否则，去掉下图的www.</p><img src="/archives/20190703-personal-domain/cname.png"><p>然后执行,清除、再生成并部署</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g -d</span><br></pre></td></tr></table></figure><p>第四步：打开Github，打开repository里面的Settings, 在Github Pages的custom domian中填入个人域名</p><img src="/archives/20190703-personal-domain/custom_domain.png"><p>第五步：浏览器输入域名进行测试，注：第二步的域名的解析需要一定的时间生效</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;实际上有没有个人域名都无所谓，看自己需不需要而已&lt;/p&gt;
-&lt;p&gt;第一步：前期准备&lt;br&gt;个人域名，可以到各大域名商购买域名，国内有阿里云、腾讯云等&lt;/p&gt;
-&lt;p&gt;第二步：到域名解析的控制平台，添加记录，这里以阿里云为例，如下&lt;br&gt;注：&lt;br&gt;1、若发生冲突，可将@改为ww
       
     
     </summary>
