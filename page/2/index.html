@@ -350,6 +350,185 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.zhazhayang.top/archives/20190720-struct-data-two-dimension/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="渣渣羊">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="渣渣羊的进击">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/archives/20190720-struct-data-two-dimension/" class="post-title-link" itemprop="url">二维数组</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-07-20 13:38:51 / 修改时间：13:57:00" itemprop="dateCreated datePublished" datetime="2019-07-20T13:38:51+08:00">2019-07-20</time>
+            </span>
+          
+
+          
+            
+
+            
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/数据结构/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+              
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/archives/20190720-struct-data-two-dimension/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/archives/20190720-struct-data-two-dimension/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>题目和解法来源《剑指Offer》</p>
+<h2 id="题目4"><a href="#题目4" class="headerlink" title="题目4"></a>题目4</h2><p>行从左到右递增，列从上到下递增的二维数组，判断一个整数是否在该数组中</p>
+<h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><p>算法步骤：<br>1、与列最小比较，若num比其小，即可排除该列<br>2、与行最大比较，若num比其大，即可排除该行</p>
+<p>算法实现：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">bool FindNumInTwoDimension(int* a, int columns, int rows, int num)</span><br><span class="line">&#123;</span><br><span class="line">	int i=0,j=columns-1;</span><br><span class="line">	for (int i = 0;i &lt; rows;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		for (int j = 0;j &lt; columns;j++)</span><br><span class="line">		&#123;</span><br><span class="line">			cout &lt;&lt; a[i*columns + j] &lt;&lt; &quot; &quot;;</span><br><span class="line">		&#125;</span><br><span class="line">		cout &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">	if ((a != NULL)&amp;&amp;(rows&gt;0)&amp;&amp;(columns&gt;0))</span><br><span class="line">	&#123;</span><br><span class="line">		while (i&lt;rows &amp;&amp; j&gt;=0)</span><br><span class="line">		&#123;</span><br><span class="line">			if (a[i * columns + j] == num)</span><br><span class="line">				return true;</span><br><span class="line">			else if (a[i * columns + j] &gt; num)</span><br><span class="line">				j--;</span><br><span class="line">			else</span><br><span class="line">				i++;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	return false;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="我的思考"><a href="#我的思考" class="headerlink" title="我的思考"></a>我的思考</h2><p>1、第一行中找出x1和x2满足，x1&lt;num&lt;x2<br>2、第一列中找出y1和y2满足，y1&lt;num&lt;y2<br>3、x=0, y=0,（x1, 0）与（0, y1）构成的直线，（x2, 0）与（0, y2）构成的直线<br>4、要找的数在四条直线构成的区域当中<br>ps：感觉实现起来比较复杂</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://www.zhazhayang.top/archives/20190718-struct-data-array/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2039,215 +2218,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.zhazhayang.top/archives/20190704-included-by-google/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="渣渣羊">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="渣渣羊的进击">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/archives/20190704-included-by-google/" class="post-title-link" itemprop="url">hexo博客添加到谷歌收录</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-
-          
-          
-          
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-07-04 23:48:02" itemprop="dateCreated datePublished" datetime="2019-07-04T23:48:02+08:00">2019-07-04</time>
-            </span>
-          
-
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-07-14 19:48:02" itemprop="dateModified" datetime="2019-07-14T19:48:02+08:00">2019-07-14</time>
-              </span>
-            
-          
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/搭建博客/" itemprop="url" rel="index"><span itemprop="name">搭建博客</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-              
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-            
-                <span class="post-meta-item-text">评论数：</span>
-                <a href="/archives/20190704-included-by-google/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/archives/20190704-included-by-google/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          <br>
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>第一步：到谷歌搜索控制台验证网站所有权<br>1、打开GOOGLE的Search Console: <a href="https://search.google.com/" rel="external nofollow noopener noreferrer" target="_blank">https://search.google.com/</a><br>2、以网址前缀的资源类型填入你的域名</p>
-
-<p>3、选择验证所有权的方式，个人域名采用域名提供商的方式，github.io则选用HTML上传或HTML标记。<br>Search Console验证网站所有权帮助：<a href="https://support.google.com/webmasters/answer/9008080?hl=zh-Hans" rel="external nofollow noopener noreferrer" target="_blank">https://support.google.com/webmasters/answer/9008080?hl=zh-Hans</a><br>注：这里以个人域名为例，其他方式的话，下面的45小点不用做啦！</p>
-<img src="/archives/20190704-included-by-google/vertification_method.png">
-<p>4、复制txt里面的记录值</p>
-<img src="/archives/20190704-included-by-google/dns_txt.png">
-<p>5、打开个人的域名提供商的DNS解析控制平台<br>注：这里以啊里云为例<br>记录类型选择TXT<br>把刚才的复制粘贴到记录值</p>
-<img src="/archives/20190704-included-by-google/txt_record.png">
-<p>6、回到Google Search Console点击验证</p>
-<p>第二步：在项目中生成sitemap<br>1、在项目的根目录下使用npm命令</p>
-<figure class="highlight plain"><figcaption><span>install hexo-generator-sitemap --save```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2、在站点配置文件任意位置加上</span><br></pre></td></tr></table></figure>
-
-<p>sitemap:<br>  path: sitemap.xml</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">3、修改站点配置文件的URL字段，如下</span><br><span class="line">&#123;% asset_img modify_url.png %&#125;</span><br><span class="line">注：如果这部分不修改，生成的站点地图的链接都是不存在的，站点地图可读，但存在错误</span><br><span class="line">&#123;% asset_img error_url.png %&#125;</span><br><span class="line"></span><br><span class="line">4、执行</span><br></pre></td></tr></table></figure>
-
-<p>hexo clean<br>hexo g -d</p>
-<pre><code>查看结果，可以看到public目录下生成了sitemap文件
-
-第三步：提交站点地图到 google search console
-找到google search console中的站点地图
-填入你的域名+/sitemap.xml点击提交
-{% asset_img add_sitemap.png %}
-成功如下
-{% asset_img success_add.png %}
-
-不久之后，可以在谷歌搜索输入```site: 博客的域名``查看是否成功收录
-{% asset_img success_search.png %}
-</code></pre>
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2294,7 +2264,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">24</span>
+                    <span class="site-state-item-count">25</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>

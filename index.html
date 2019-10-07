@@ -350,6 +350,208 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.zhazhayang.top/archives/20190910-ios-DesignPattern/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="渣渣羊">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="渣渣羊的进击">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/archives/20190910-ios-DesignPattern/" class="post-title-link" itemprop="url">ios常用设计模式</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-09-10 23:04:15" itemprop="dateCreated datePublished" datetime="2019-09-10T23:04:15+08:00">2019-09-10</time>
+            </span>
+          
+
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-10-07 22:37:42" itemprop="dateModified" datetime="2019-10-07T22:37:42+08:00">2019-10-07</time>
+              </span>
+            
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/ios/" itemprop="url" rel="index"><span itemprop="name">ios</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+              
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/archives/20190910-ios-DesignPattern/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/archives/20190910-ios-DesignPattern/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>设计模式是特定场景下对特定问题的解决方案。以下介绍Cocoa框架下的其中4种设计模式：单例模式、委托者模式、观察者模式、MVC模式</p>
+<h2 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h2><p>定义：一个类只有一个实例，并提供一个全局访问点。<br>实现：单例模式一般会封装一个静态属性，并提供静态实例的创建方法。<br>class Singleton {<br>    static let sharedInstance = Singleton()<br>}</p>
+<p>案例：<br>Cocoa Touch框架中的单例类<br>1、UIApplication：提供了应用程序的集中控制点来保持应用的状态。<br>shared方法：创建和获得UIApplication实例的静态方法。<br>isIdleTimerDisable属性：true默认情况系统会锁屏，false系统不会锁屏。<br>openURL方法：打开一些内置的ios应用。<br>2、UserDefaults：方便读取应用设置<br>standard方法：创建和获取NSUserDefaults实例的静态方法<br>3、NotificationCenter：信息广播通知，采用观察者模式的通知机制<br>default方法：创建和获取NotificaCenter的共享方法。<br>4、FileManager：文件系统通用操作<br>default方法：创建和获取FileManager的实例方法<br>5、Bundle:动态加载（卸载）可执行代码、定位资源文件、资源本地化和访问文件系统等功能。<br>main：创建和获取Bundle实例的共享方法。</p>
+<h2 id="委托模式"><a href="#委托模式" class="headerlink" title="委托模式"></a>委托模式</h2><p>即代理模式，给其他对象提供一个委托，以控制对这个对象的访问。<br>实例：哲学家通过协议将工作方法委托给徒弟, 由徒弟去实现工作方法<br>class Philosoper: NSObject {<br>    var timer: NSTimer!<br>    var count: Int = 0<br>    var delegate: PhliosopherDelegate?</p>
+<pre><code>func start() {
+    self.delegate?.work()
+}</code></pre><p>}</p>
+<p>potocol PhilosopherDelegate {<br>    func work()<br>}</p>
+<p>class ViewController: UIViewController, PhilosopherDelegate {<br>    override func viewDidLoad() {<br>        super.viewDidLoad()</p>
+<pre><code>    let tom = Philosopher()
+    tom.delegate = self
+    tom.start()
+}
+
+func work() {
+    print(&quot;Working...&quot;)
+}</code></pre><p>}<br>案例：UITableViewDelegate、UITextFieldDelegate等等</p>
+<h2 id="观察者模式"><a href="#观察者模式" class="headerlink" title="观察者模式"></a>观察者模式</h2><p>解决问题：当一个对象的状态发生改变时，所有依赖于它的对象都得到通知并被自动更新。<br>Cocoa Touch具体应用：通知机制、KVO机制<br>通知机制：广播通知，在应用中的多个对象之间发消息。在NSNotificationCenter的addObserver中添加消息接受对象，通知中心就会把消息广播给已添加的对象。<br>KVO机制：属性发生变化的对象发送消息给已添加的观察者，让其关注它的某个属性变化。</p>
+<h2 id="MVC模式"><a href="#MVC模式" class="headerlink" title="MVC模式"></a>MVC模式</h2><p>Model-View-Controller<br>模型：保存应用程序数据的类<br>视图：包括窗口、控件、以及其他一些用户能够看到并与之交互的元素<br>控制器：把模型和视图绑定在一起的代码，包括处理用户输入的程序逻辑</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p>《ios开发指南》</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://www.zhazhayang.top/archives/20190910-ios-PropertyList/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -395,7 +597,7 @@
                 
               
 
-              <time title="创建时间：2019-09-10 18:56:01 / 修改时间：19:29:42" itemprop="dateCreated datePublished" datetime="2019-09-10T18:56:01+08:00">2019-09-10</time>
+              <time title="创建时间：2019-09-10 18:56:01 / 修改时间：23:37:55" itemprop="dateCreated datePublished" datetime="2019-09-10T18:56:01+08:00">2019-09-10</time>
             </span>
           
 
@@ -471,6 +673,7 @@
 <h2 id="简单实例"><a href="#简单实例" class="headerlink" title="简单实例"></a>简单实例</h2><img src="/archives/20190910-ios-PropertyList/propertyList.png">
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">import UIKit</span><br><span class="line"></span><br><span class="line">class ViewController: UIViewController &#123;</span><br><span class="line">    @IBOutlet var lineFields: [UITextField]!</span><br><span class="line">    </span><br><span class="line">    override func viewDidLoad() &#123;</span><br><span class="line">        super.viewDidLoad()</span><br><span class="line">        // Do any additional setup after loading the view.</span><br><span class="line">        let fileURL = self.dataFileURL()</span><br><span class="line">        if FileManager.default.fileExists(atPath: fileURL.path!) &#123;</span><br><span class="line">            if let array = NSArray(contentsOf: fileURL as URL) as? [String] &#123; //获取plist中的内容</span><br><span class="line">                for i in 0..&lt;array.count &#123;</span><br><span class="line">                    lineFields[i].text = array[i] </span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        let app = UIApplication.shared</span><br><span class="line">        NotificationCenter.default.addObserver(self, selector: #selector(self.applicationWillResignActive(notification:)), name: UIApplication.willResignActiveNotification, object: app) </span><br><span class="line">        //当应用退出活跃状态时进行保存(进入后台状态)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    @objc func applicationWillResignActive(notification: NSNotification) &#123;</span><br><span class="line">        let fileURL = self.dataFileURL()</span><br><span class="line">        let array = (self.lineFields as NSArray).value(forKey: &quot;text&quot;) as! NSArray</span><br><span class="line">        array.write(to: fileURL as URL, atomically: true) //写入到data.plist</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    func dataFileURL() -&gt; NSURL &#123;</span><br><span class="line">        let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask) //获取应用沙盒中Documents的路径</span><br><span class="line">        </span><br><span class="line">        var url:NSURL?</span><br><span class="line">        url = NSURL(fileURLWithPath: &quot;&quot;)</span><br><span class="line">        url = urls.first!.appendingPathComponent(&quot;data.plist&quot;) as NSURL</span><br><span class="line">        </span><br><span class="line">        return url!</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p>《精通ios开发》</p>
 
           
         
@@ -1946,185 +2149,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.zhazhayang.top/archives/20190720-struct-data-two-dimension/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="渣渣羊">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="渣渣羊的进击">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/archives/20190720-struct-data-two-dimension/" class="post-title-link" itemprop="url">二维数组</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-
-          
-          
-          
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-07-20 13:38:51 / 修改时间：13:57:00" itemprop="dateCreated datePublished" datetime="2019-07-20T13:38:51+08:00">2019-07-20</time>
-            </span>
-          
-
-          
-            
-
-            
-          
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/数据结构/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-              
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-            
-                <span class="post-meta-item-text">评论数：</span>
-                <a href="/archives/20190720-struct-data-two-dimension/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/archives/20190720-struct-data-two-dimension/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          <br>
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>题目和解法来源《剑指Offer》</p>
-<h2 id="题目4"><a href="#题目4" class="headerlink" title="题目4"></a>题目4</h2><p>行从左到右递增，列从上到下递增的二维数组，判断一个整数是否在该数组中</p>
-<h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><p>算法步骤：<br>1、与列最小比较，若num比其小，即可排除该列<br>2、与行最大比较，若num比其大，即可排除该行</p>
-<p>算法实现：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">bool FindNumInTwoDimension(int* a, int columns, int rows, int num)</span><br><span class="line">&#123;</span><br><span class="line">	int i=0,j=columns-1;</span><br><span class="line">	for (int i = 0;i &lt; rows;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		for (int j = 0;j &lt; columns;j++)</span><br><span class="line">		&#123;</span><br><span class="line">			cout &lt;&lt; a[i*columns + j] &lt;&lt; &quot; &quot;;</span><br><span class="line">		&#125;</span><br><span class="line">		cout &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">	if ((a != NULL)&amp;&amp;(rows&gt;0)&amp;&amp;(columns&gt;0))</span><br><span class="line">	&#123;</span><br><span class="line">		while (i&lt;rows &amp;&amp; j&gt;=0)</span><br><span class="line">		&#123;</span><br><span class="line">			if (a[i * columns + j] == num)</span><br><span class="line">				return true;</span><br><span class="line">			else if (a[i * columns + j] &gt; num)</span><br><span class="line">				j--;</span><br><span class="line">			else</span><br><span class="line">				i++;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	return false;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="我的思考"><a href="#我的思考" class="headerlink" title="我的思考"></a>我的思考</h2><p>1、第一行中找出x1和x2满足，x1&lt;num&lt;x2<br>2、第一列中找出y1和y2满足，y1&lt;num&lt;y2<br>3、x=0, y=0,（x1, 0）与（0, y1）构成的直线，（x2, 0）与（0, y2）构成的直线<br>4、要找的数在四条直线构成的区域当中<br>ps：感觉实现起来比较复杂</p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2171,7 +2195,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">24</span>
+                    <span class="site-state-item-count">25</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>

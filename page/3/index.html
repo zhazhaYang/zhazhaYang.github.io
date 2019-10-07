@@ -350,6 +350,215 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.zhazhayang.top/archives/20190704-included-by-google/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="渣渣羊">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="渣渣羊的进击">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/archives/20190704-included-by-google/" class="post-title-link" itemprop="url">hexo博客添加到谷歌收录</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-07-04 23:48:02" itemprop="dateCreated datePublished" datetime="2019-07-04T23:48:02+08:00">2019-07-04</time>
+            </span>
+          
+
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-07-14 19:48:02" itemprop="dateModified" datetime="2019-07-14T19:48:02+08:00">2019-07-14</time>
+              </span>
+            
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/搭建博客/" itemprop="url" rel="index"><span itemprop="name">搭建博客</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+              
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/archives/20190704-included-by-google/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/archives/20190704-included-by-google/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>第一步：到谷歌搜索控制台验证网站所有权<br>1、打开GOOGLE的Search Console: <a href="https://search.google.com/" rel="external nofollow noopener noreferrer" target="_blank">https://search.google.com/</a><br>2、以网址前缀的资源类型填入你的域名</p>
+
+<p>3、选择验证所有权的方式，个人域名采用域名提供商的方式，github.io则选用HTML上传或HTML标记。<br>Search Console验证网站所有权帮助：<a href="https://support.google.com/webmasters/answer/9008080?hl=zh-Hans" rel="external nofollow noopener noreferrer" target="_blank">https://support.google.com/webmasters/answer/9008080?hl=zh-Hans</a><br>注：这里以个人域名为例，其他方式的话，下面的45小点不用做啦！</p>
+<img src="/archives/20190704-included-by-google/vertification_method.png">
+<p>4、复制txt里面的记录值</p>
+<img src="/archives/20190704-included-by-google/dns_txt.png">
+<p>5、打开个人的域名提供商的DNS解析控制平台<br>注：这里以啊里云为例<br>记录类型选择TXT<br>把刚才的复制粘贴到记录值</p>
+<img src="/archives/20190704-included-by-google/txt_record.png">
+<p>6、回到Google Search Console点击验证</p>
+<p>第二步：在项目中生成sitemap<br>1、在项目的根目录下使用npm命令</p>
+<figure class="highlight plain"><figcaption><span>install hexo-generator-sitemap --save```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2、在站点配置文件任意位置加上</span><br></pre></td></tr></table></figure>
+
+<p>sitemap:<br>  path: sitemap.xml</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">3、修改站点配置文件的URL字段，如下</span><br><span class="line">&#123;% asset_img modify_url.png %&#125;</span><br><span class="line">注：如果这部分不修改，生成的站点地图的链接都是不存在的，站点地图可读，但存在错误</span><br><span class="line">&#123;% asset_img error_url.png %&#125;</span><br><span class="line"></span><br><span class="line">4、执行</span><br></pre></td></tr></table></figure>
+
+<p>hexo clean<br>hexo g -d</p>
+<pre><code>查看结果，可以看到public目录下生成了sitemap文件
+
+第三步：提交站点地图到 google search console
+找到google search console中的站点地图
+填入你的域名+/sitemap.xml点击提交
+{% asset_img add_sitemap.png %}
+成功如下
+{% asset_img success_add.png %}
+
+不久之后，可以在谷歌搜索输入```site: 博客的域名``查看是否成功收录
+{% asset_img success_search.png %}
+</code></pre>
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://www.zhazhayang.top/archives/20190703-personal-domain/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1185,7 +1394,7 @@ hexo --debug</code></pre><img src="/archives/20190702-setNextTtheme/check_theme.
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">24</span>
+                    <span class="site-state-item-count">25</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>

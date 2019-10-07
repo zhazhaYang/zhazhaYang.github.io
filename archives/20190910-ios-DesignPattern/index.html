@@ -94,13 +94,18 @@
 
 
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="渣渣羊的进击">
-<meta property="og:url" content="http://www.zhazhayang.top/categories/C/index.html">
+  <meta name="description" content="前言设计模式是特定场景下对特定问题的解决方案。以下介绍Cocoa框架下的其中4种设计模式：单例模式、委托者模式、观察者模式、MVC模式 单例模式定义：一个类只有一个实例，并提供一个全局访问点。实现：单例模式一般会封装一个静态属性，并提供静态实例的创建方法。class Singleton {    static let sharedInstance = Singleton()} 案例：Cocoa T">
+<meta name="keywords" content="ios">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ios常用设计模式">
+<meta property="og:url" content="http://www.zhazhayang.top/archives/20190910-ios-DesignPattern/index.html">
 <meta property="og:site_name" content="渣渣羊的进击">
+<meta property="og:description" content="前言设计模式是特定场景下对特定问题的解决方案。以下介绍Cocoa框架下的其中4种设计模式：单例模式、委托者模式、观察者模式、MVC模式 单例模式定义：一个类只有一个实例，并提供一个全局访问点。实现：单例模式一般会封装一个静态属性，并提供静态实例的创建方法。class Singleton {    static let sharedInstance = Singleton()} 案例：Cocoa T">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-10-07T14:37:42.543Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="渣渣羊的进击">
+<meta name="twitter:title" content="ios常用设计模式">
+<meta name="twitter:description" content="前言设计模式是特定场景下对特定问题的解决方案。以下介绍Cocoa框架下的其中4种设计模式：单例模式、委托者模式、观察者模式、MVC模式 单例模式定义：一个类只有一个实例，并提供一个全局访问点。实现：单例模式一般会封装一个静态属性，并提供静态实例的创建方法。class Singleton {    static let sharedInstance = Singleton()} 案例：Cocoa T">
 
 
 
@@ -110,7 +115,7 @@
 
   
   
-  <link rel="canonical" href="http://www.zhazhayang.top/categories/C/">
+  <link rel="canonical" href="http://www.zhazhayang.top/archives/20190910-ios-DesignPattern/">
 
 
 
@@ -120,7 +125,7 @@
   };
 </script>
 
-  <title>分类: C++ | 渣渣羊的进击</title>
+  <title>ios常用设计模式 | 渣渣羊的进击</title>
   
 
 
@@ -168,7 +173,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
   <a href="https://github.com/zhazhaYang" class="github-corner" aria-label="View source on GitHub" rel="external nofollow noopener noreferrer" target="_blank">
@@ -256,7 +261,7 @@
         
         
           
-          <li class="menu-item menu-item-categories menu-item-active">
+          <li class="menu-item menu-item-categories">
 
     
     
@@ -272,7 +277,7 @@
         
         
           
-          <li class="menu-item menu-item-archives">
+          <li class="menu-item menu-item-archives menu-item-active">
 
     
     
@@ -329,83 +334,252 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block category">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>C++<small>分类</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
+
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.zhazhayang.top/archives/20190910-ios-DesignPattern/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="渣渣羊">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="渣渣羊的进击">
+    </span>
+
+    
+      <header class="post-header">
+
         
-          <a class="post-title-link" href="/archives/20190710-c-knownledge/" itemprop="url">
-            
-              <span itemprop="name">C++知识小点</span>
-            
-          </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">ios常用设计模式
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-07-10T11:40:19+08:00" content="2019-07-10">
-          07-10
-        </time>
-      </div>
+              
+            
+          </h1>
+        
 
-    </header>
-  </article>
+        <div class="post-meta">
 
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-09-10 23:04:15" itemprop="dateCreated datePublished" datetime="2019-09-10T23:04:15+08:00">2019-09-10</time>
+            </span>
+          
+
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-10-07 22:37:42" itemprop="dateModified" datetime="2019-10-07T22:37:42+08:00">2019-10-07</time>
+              </span>
+            
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/ios/" itemprop="url" rel="index"><span itemprop="name">ios</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+              
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/archives/20190910-ios-DesignPattern/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/archives/20190910-ios-DesignPattern/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+                 阅读次数： 
+                <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+              </span>
+            </span>
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>设计模式是特定场景下对特定问题的解决方案。以下介绍Cocoa框架下的其中4种设计模式：单例模式、委托者模式、观察者模式、MVC模式</p>
+<h2 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h2><p>定义：一个类只有一个实例，并提供一个全局访问点。<br>实现：单例模式一般会封装一个静态属性，并提供静态实例的创建方法。<br>class Singleton {<br>    static let sharedInstance = Singleton()<br>}</p>
+<p>案例：<br>Cocoa Touch框架中的单例类<br>1、UIApplication：提供了应用程序的集中控制点来保持应用的状态。<br>shared方法：创建和获得UIApplication实例的静态方法。<br>isIdleTimerDisable属性：true默认情况系统会锁屏，false系统不会锁屏。<br>openURL方法：打开一些内置的ios应用。<br>2、UserDefaults：方便读取应用设置<br>standard方法：创建和获取NSUserDefaults实例的静态方法<br>3、NotificationCenter：信息广播通知，采用观察者模式的通知机制<br>default方法：创建和获取NotificaCenter的共享方法。<br>4、FileManager：文件系统通用操作<br>default方法：创建和获取FileManager的实例方法<br>5、Bundle:动态加载（卸载）可执行代码、定位资源文件、资源本地化和访问文件系统等功能。<br>main：创建和获取Bundle实例的共享方法。</p>
+<h2 id="委托模式"><a href="#委托模式" class="headerlink" title="委托模式"></a>委托模式</h2><p>即代理模式，给其他对象提供一个委托，以控制对这个对象的访问。<br>实例：哲学家通过协议将工作方法委托给徒弟, 由徒弟去实现工作方法<br>class Philosoper: NSObject {<br>    var timer: NSTimer!<br>    var count: Int = 0<br>    var delegate: PhliosopherDelegate?</p>
+<pre><code>func start() {
+    self.delegate?.work()
+}</code></pre><p>}</p>
+<p>potocol PhilosopherDelegate {<br>    func work()<br>}</p>
+<p>class ViewController: UIViewController, PhilosopherDelegate {<br>    override func viewDidLoad() {<br>        super.viewDidLoad()</p>
+<pre><code>    let tom = Philosopher()
+    tom.delegate = self
+    tom.start()
+}
+
+func work() {
+    print(&quot;Working...&quot;)
+}</code></pre><p>}<br>案例：UITableViewDelegate、UITextFieldDelegate等等</p>
+<h2 id="观察者模式"><a href="#观察者模式" class="headerlink" title="观察者模式"></a>观察者模式</h2><p>解决问题：当一个对象的状态发生改变时，所有依赖于它的对象都得到通知并被自动更新。<br>Cocoa Touch具体应用：通知机制、KVO机制<br>通知机制：广播通知，在应用中的多个对象之间发消息。在NSNotificationCenter的addObserver中添加消息接受对象，通知中心就会把消息广播给已添加的对象。<br>KVO机制：属性发生变化的对象发送消息给已添加的观察者，让其关注它的某个属性变化。</p>
+<h2 id="MVC模式"><a href="#MVC模式" class="headerlink" title="MVC模式"></a>MVC模式</h2><p>Model-View-Controller<br>模型：保存应用程序数据的类<br>视图：包括窗口、控件、以及其他一些用户能够看到并与之交互的元素<br>控制器：把模型和视图绑定在一起的代码，包括处理用户输入的程序逻辑</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p>《ios开发指南》</p>
 
       
     </div>
 
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        
+          
+        
+        <div class="post-tags">
+          
+            <a href="/tags/ios/" rel="tag"># ios</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/archives/20190910-ios-PropertyList/" rel="next" title="ios本地数据存储:属性列表">
+                <i class="fa fa-chevron-left"></i> ios本地数据存储:属性列表
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+  </div>
 
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+
+  
+
+
 
         </div>
         
@@ -425,8 +599,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -539,6 +722,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单例模式"><span class="nav-number">2.</span> <span class="nav-text">单例模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#委托模式"><span class="nav-number">3.</span> <span class="nav-text">委托模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#观察者模式"><span class="nav-number">4.</span> <span class="nav-text">观察者模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MVC模式"><span class="nav-number">5.</span> <span class="nav-text">MVC模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-number">6.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
@@ -689,6 +889,10 @@
 
 
   
+  <script src="/js/scrollspy.js?v=7.1.2"></script>
+<script src="/js/post-details.js?v=7.1.2"></script>
+
+
 
   
 
@@ -730,6 +934,8 @@
 
 
 
+
+  
 
 
   
