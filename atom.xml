@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.zhazhayang.top/"/>
-  <updated>2020-03-17T17:11:49.505Z</updated>
+  <updated>2020-03-18T14:03:56.530Z</updated>
   <id>http://www.zhazhayang.top/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Mac OS配置flutter开发环境</title>
+    <link href="http://www.zhazhayang.top/archives/20200318-flutter-install/"/>
+    <id>http://www.zhazhayang.top/archives/20200318-flutter-install/</id>
+    <published>2020-03-18T12:49:00.000Z</published>
+    <updated>2020-03-18T14:03:56.530Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="系统要求"><a href="#系统要求" class="headerlink" title="系统要求"></a>系统要求</h1><p>To install and run Flutter, your development environment must meet these minimum requirements:<br>Operating Systems: macOS (64-bit)<br>Disk Space: 2.8 GB (does not include disk space for IDE/tools).<br>Tools: Flutter depends on these command-line tools being available in your environment. bash、curl、git 2.x、mkdir、rm、unzip、which、zip</p><p>我的系统为macOS Majave 10.14.6</p><h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h1><p>官网：[<a href="https://flutter.dev/docs/get-started/install/macos]" rel="external nofollow noopener noreferrer" target="_blank">https://flutter.dev/docs/get-started/install/macos]</a><br>下载后解压到你想放置的目录</p><h1 id="添加到环境变量"><a href="#添加到环境变量" class="headerlink" title="添加到环境变量"></a>添加到环境变量</h1><p>打开命令行工具</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yangdeMacBook-Pro:~ yang$ sudo vim ~/.bash_profile</span><br></pre></td></tr></table></figure><p>在最下方添加flutter/bin的路径：<br>export PATH=/Users/yang/flutter/bin:$PATH<br>再生效配置并且检测是否成功</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yangdeMacBook-Pro:~ yang$ source ~/.bash_profile</span><br><span class="line">yangdeMacBook-Pro:~ yang$ echo $PATH</span><br><span class="line">yangdeMacBook-Pro:~ yang$ which flutter</span><br></pre></td></tr></table></figure><h1 id="检测依赖的环境"><a href="#检测依赖的环境" class="headerlink" title="检测依赖的环境"></a>检测依赖的环境</h1><p>检测后根据其提示按装所需要的工具</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">yangdeMacBook-Pro:~ yang$ flutter doctor</span><br><span class="line">Doctor summary (to see all details, run flutter doctor -v):</span><br><span class="line">[✓] Flutter (Channel stable, v1.12.13+hotfix.8, on Mac OS X 10.14.6 18G84,</span><br><span class="line">    locale zh-Hans-CN)</span><br><span class="line">[✗] Android toolchain - develop for Android devices</span><br><span class="line">    ✗ Unable to locate Android SDK.</span><br><span class="line">      Install Android Studio from:</span><br><span class="line">      https://developer.android.com/studio/index.html</span><br><span class="line">      On first launch it will assist you in installing the Android SDK</span><br><span class="line">      components.</span><br><span class="line">      (or visit https://flutter.dev/setup/#android-setup for detailed</span><br><span class="line">      instructions).</span><br><span class="line">      If the Android SDK has been installed to a custom location, set</span><br><span class="line">      ANDROID_HOME to that location.</span><br><span class="line">      You may also want to add it to your PATH environment variable.</span><br><span class="line"></span><br><span class="line">[!] Xcode - develop for iOS and macOS (Xcode 11.3.1)</span><br><span class="line">    ✗ CocoaPods not installed.</span><br><span class="line">        CocoaPods is used to retrieve the iOS and macOS platform side&apos;s plugin</span><br><span class="line">        code that responds to your plugin usage on the Dart side.</span><br><span class="line">        Without CocoaPods, plugins will not work on iOS or macOS.</span><br><span class="line">        For more info, see https://flutter.dev/platform-plugins</span><br><span class="line">      To install:</span><br><span class="line">        sudo gem install cocoapods</span><br><span class="line">[!] Android Studio (not installed)</span><br><span class="line">[✓] VS Code (version 1.42.1)</span><br><span class="line">[!] Connected device</span><br><span class="line">    ! No devices available</span><br><span class="line"></span><br><span class="line">! Doctor found issues in 4 categories.</span><br></pre></td></tr></table></figure><h1 id="配置桌面应用的开发"><a href="#配置桌面应用的开发" class="headerlink" title="配置桌面应用的开发"></a>配置桌面应用的开发</h1><p>从flutter 1.13开始，其作为alpha版本提供对macOS桌面的支持<br>官网链接:[<a href="https://flutter.dev/desktop]" rel="external nofollow noopener noreferrer" target="_blank">https://flutter.dev/desktop]</a><br>1、检测可用channels</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yangdeMacBook-Pro:hello yang$ flutter channel</span><br></pre></td></tr></table></figure><p>Flutter channels:</p><ul><li>master<br>dev<br>beta<br>stable<br>2、切换channel到master, 并更新flutter sdk和依赖包<br>注：stable是稳定的分支，官方建议的<br>  master是开发分支，稳定性低许多<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yangdeMacBook-Pro:hello yang$ flutter channel master</span><br><span class="line">yangdeMacBook-Pro:hello yang$ flutter upgrade</span><br></pre></td></tr></table></figure></li></ul><p>3、开启macOS桌面支持</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yangdeMacBook-Pro:hello yang$ flutter config --enable-macos-desktop</span><br></pre></td></tr></table></figure><p>4、测试</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">yangdeMacBook-Pro:~ yang$ mkdir hello</span><br><span class="line">yangdeMacBook-Pro:~ yang$ cd hello</span><br><span class="line">yangdeMacBook-Pro:hello yang$ flutter create .</span><br><span class="line">yangdeMacBook-Pro:hello yang$ flutter run -d macOS</span><br></pre></td></tr></table></figure><img src="/archives/20200318-flutter-install/demo.png"><h1 id="安装CocoaPods遇到的问题"><a href="#安装CocoaPods遇到的问题" class="headerlink" title="安装CocoaPods遇到的问题"></a>安装CocoaPods遇到的问题</h1><p>安装命令：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">yangdeMacBook-Pro:~ yang$ sudo gem install cocoapods</span><br><span class="line">``` </span><br><span class="line">问题：</span><br><span class="line">ERROR:  Error installing cocoapods:</span><br><span class="line">ERROR: Failed to build gem native extension.</span><br><span class="line">系统：</span><br><span class="line">macOS Majave 10.14.6</span><br><span class="line">ruby版本:</span><br><span class="line">ruby 2.3.7p456 (2018-03-28 revision 63024) [universal.x86_64-darwin18]</span><br><span class="line">解决：</span><br><span class="line">使用ruby-2.6.0</span><br><span class="line">过程：</span><br></pre></td></tr></table></figure><p>yangdeMacBook-Pro:~ yang$ source <del>/.rvm/scripts/rvm<br>yangdeMacBook-Pro:</del> yang$ rvm list known<br>yangdeMacBook-Pro:~ yang$ rvm install “ruby-2.6.0”<br>yangdeMacBook-Pro:~ yang$ rvm use 2.6.0 –default<br>yangdeMacBook-Pro:~ yang$ sudo gem install cocoapods</p><pre><code></code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;系统要求&quot;&gt;&lt;a href=&quot;#系统要求&quot; class=&quot;headerlink&quot; title=&quot;系统要求&quot;&gt;&lt;/a&gt;系统要求&lt;/h1&gt;&lt;p&gt;To install and run Flutter, your development environment must 
+      
+    
+    </summary>
+    
+    
+      <category term="flutter" scheme="http://www.zhazhayang.top/categories/flutter/"/>
+    
+    
+      <category term="flutter" scheme="http://www.zhazhayang.top/tags/flutter/"/>
+    
+  </entry>
   
   <entry>
     <title>前后端交互初试</title>
@@ -524,35 +550,6 @@
     
     
       <category term="编译原理总结" scheme="http://www.zhazhayang.top/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E6%80%BB%E7%BB%93/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>hexo博客添加valine评论功能，设置第三方邮件通知提醒</title>
-    <link href="http://www.zhazhayang.top/archives/20190706-add-comment/"/>
-    <id>http://www.zhazhayang.top/archives/20190706-add-comment/</id>
-    <published>2019-07-05T16:39:02.000Z</published>
-    <updated>2019-07-14T11:47:44.600Z</updated>
-    
-    <content type="html"><![CDATA[<p>直奔主题！</p><p>第一步：leancloud配置<br>1、注册和实名认证leancloud：<a href="https://www.leancloud.cn/" rel="external nofollow noopener noreferrer" target="_blank">https://www.leancloud.cn/</a><br>2、创建应用<br>3、打开新创建的应用的设置<br>4、填上安全中心里面的Web安全域</p><img src="/archives/20190706-add-comment/web_scure.png"><p>5、修改邮件模板里面的重设密码的模板，如下图</p><img src="/archives/20190706-add-comment/re_password.png"><p>第二步：hexo项目文件的设置<br>设置NexT主题配置文件的valine字段<br>enable设为true<br>appid和appkey从leancloud的应用设置的应用Key中拷贝<br>notify字段设为true<br>placeholder字段为评论编辑框的占位符</p><img src="/archives/20190706-add-comment/valine_enable.png"><p>第三步：设置第三方邮件通知<br><a href="https://github.com/zhaojun1998/Valine-Admin" rel="external nofollow noopener noreferrer" target="_blank">Valine-Admin (by@zhaojun1998)</a><br>这里toulan就不讲了，参见其博客：<a href="http://www.zhaojun.im/hexo-valine-admin/#" rel="external nofollow noopener noreferrer" target="_blank">http://www.zhaojun.im/hexo-valine-admin/#</a><br>注意注意：测试的时候，评论里留下的邮箱不能是环境变量里的 <code>SMTP_USER</code> 或 <code>TO_EMAIL</code> 里的邮箱。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;直奔主题！&lt;/p&gt;
-&lt;p&gt;第一步：leancloud配置&lt;br&gt;1、注册和实名认证leancloud：&lt;a href=&quot;https://www.leancloud.cn/&quot; rel=&quot;external nofollow noopener noreferrer&quot; target
-      
-    
-    </summary>
-    
-    
-      <category term="搭建博客" scheme="http://www.zhazhayang.top/categories/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/"/>
-    
-    
-      <category term="Hexo" scheme="http://www.zhazhayang.top/tags/Hexo/"/>
-    
-      <category term="个人博客" scheme="http://www.zhazhayang.top/tags/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/"/>
     
   </entry>
   

@@ -350,6 +350,215 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.zhazhayang.top/archives/20200318-flutter-install/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="渣渣羊">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="渣渣羊的进击">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/archives/20200318-flutter-install/" class="post-title-link" itemprop="url">Mac OS配置flutter开发环境</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2020-03-18 20:49:00 / 修改时间：22:03:56" itemprop="dateCreated datePublished" datetime="2020-03-18T20:49:00+08:00">2020-03-18</time>
+            </span>
+          
+
+          
+            
+
+            
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/flutter/" itemprop="url" rel="index"><span itemprop="name">flutter</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+              
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/archives/20200318-flutter-install/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/archives/20200318-flutter-install/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="系统要求"><a href="#系统要求" class="headerlink" title="系统要求"></a>系统要求</h1><p>To install and run Flutter, your development environment must meet these minimum requirements:<br>Operating Systems: macOS (64-bit)<br>Disk Space: 2.8 GB (does not include disk space for IDE/tools).<br>Tools: Flutter depends on these command-line tools being available in your environment. bash、curl、git 2.x、mkdir、rm、unzip、which、zip</p>
+<p>我的系统为macOS Majave 10.14.6</p>
+<h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h1><p>官网：[<a href="https://flutter.dev/docs/get-started/install/macos]" rel="external nofollow noopener noreferrer" target="_blank">https://flutter.dev/docs/get-started/install/macos]</a><br>下载后解压到你想放置的目录</p>
+<h1 id="添加到环境变量"><a href="#添加到环境变量" class="headerlink" title="添加到环境变量"></a>添加到环境变量</h1><p>打开命令行工具</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yangdeMacBook-Pro:~ yang$ sudo vim ~/.bash_profile</span><br></pre></td></tr></table></figure>
+
+<p>在最下方添加flutter/bin的路径：<br>export PATH=/Users/yang/flutter/bin:$PATH<br>再生效配置并且检测是否成功</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yangdeMacBook-Pro:~ yang$ source ~/.bash_profile</span><br><span class="line">yangdeMacBook-Pro:~ yang$ echo $PATH</span><br><span class="line">yangdeMacBook-Pro:~ yang$ which flutter</span><br></pre></td></tr></table></figure>
+
+<h1 id="检测依赖的环境"><a href="#检测依赖的环境" class="headerlink" title="检测依赖的环境"></a>检测依赖的环境</h1><p>检测后根据其提示按装所需要的工具</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">yangdeMacBook-Pro:~ yang$ flutter doctor</span><br><span class="line">Doctor summary (to see all details, run flutter doctor -v):</span><br><span class="line">[✓] Flutter (Channel stable, v1.12.13+hotfix.8, on Mac OS X 10.14.6 18G84,</span><br><span class="line">    locale zh-Hans-CN)</span><br><span class="line">[✗] Android toolchain - develop for Android devices</span><br><span class="line">    ✗ Unable to locate Android SDK.</span><br><span class="line">      Install Android Studio from:</span><br><span class="line">      https://developer.android.com/studio/index.html</span><br><span class="line">      On first launch it will assist you in installing the Android SDK</span><br><span class="line">      components.</span><br><span class="line">      (or visit https://flutter.dev/setup/#android-setup for detailed</span><br><span class="line">      instructions).</span><br><span class="line">      If the Android SDK has been installed to a custom location, set</span><br><span class="line">      ANDROID_HOME to that location.</span><br><span class="line">      You may also want to add it to your PATH environment variable.</span><br><span class="line"></span><br><span class="line">[!] Xcode - develop for iOS and macOS (Xcode 11.3.1)</span><br><span class="line">    ✗ CocoaPods not installed.</span><br><span class="line">        CocoaPods is used to retrieve the iOS and macOS platform side&apos;s plugin</span><br><span class="line">        code that responds to your plugin usage on the Dart side.</span><br><span class="line">        Without CocoaPods, plugins will not work on iOS or macOS.</span><br><span class="line">        For more info, see https://flutter.dev/platform-plugins</span><br><span class="line">      To install:</span><br><span class="line">        sudo gem install cocoapods</span><br><span class="line">[!] Android Studio (not installed)</span><br><span class="line">[✓] VS Code (version 1.42.1)</span><br><span class="line">[!] Connected device</span><br><span class="line">    ! No devices available</span><br><span class="line"></span><br><span class="line">! Doctor found issues in 4 categories.</span><br></pre></td></tr></table></figure>
+
+<h1 id="配置桌面应用的开发"><a href="#配置桌面应用的开发" class="headerlink" title="配置桌面应用的开发"></a>配置桌面应用的开发</h1><p>从flutter 1.13开始，其作为alpha版本提供对macOS桌面的支持<br>官网链接:[<a href="https://flutter.dev/desktop]" rel="external nofollow noopener noreferrer" target="_blank">https://flutter.dev/desktop]</a><br>1、检测可用channels</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yangdeMacBook-Pro:hello yang$ flutter channel</span><br></pre></td></tr></table></figure>
+
+<p>Flutter channels:</p>
+<ul>
+<li>master<br>dev<br>beta<br>stable<br>2、切换channel到master, 并更新flutter sdk和依赖包<br>注：stable是稳定的分支，官方建议的<br>  master是开发分支，稳定性低许多<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yangdeMacBook-Pro:hello yang$ flutter channel master</span><br><span class="line">yangdeMacBook-Pro:hello yang$ flutter upgrade</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>3、开启macOS桌面支持</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yangdeMacBook-Pro:hello yang$ flutter config --enable-macos-desktop</span><br></pre></td></tr></table></figure>
+
+<p>4、测试</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">yangdeMacBook-Pro:~ yang$ mkdir hello</span><br><span class="line">yangdeMacBook-Pro:~ yang$ cd hello</span><br><span class="line">yangdeMacBook-Pro:hello yang$ flutter create .</span><br><span class="line">yangdeMacBook-Pro:hello yang$ flutter run -d macOS</span><br></pre></td></tr></table></figure>
+
+<img src="/archives/20200318-flutter-install/demo.png">
+
+<h1 id="安装CocoaPods遇到的问题"><a href="#安装CocoaPods遇到的问题" class="headerlink" title="安装CocoaPods遇到的问题"></a>安装CocoaPods遇到的问题</h1><p>安装命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">yangdeMacBook-Pro:~ yang$ sudo gem install cocoapods</span><br><span class="line">``` </span><br><span class="line">问题：</span><br><span class="line">ERROR:  Error installing cocoapods:</span><br><span class="line">	ERROR: Failed to build gem native extension.</span><br><span class="line">系统：</span><br><span class="line">macOS Majave 10.14.6</span><br><span class="line">ruby版本:</span><br><span class="line">ruby 2.3.7p456 (2018-03-28 revision 63024) [universal.x86_64-darwin18]</span><br><span class="line">解决：</span><br><span class="line">使用ruby-2.6.0</span><br><span class="line">过程：</span><br></pre></td></tr></table></figure>
+
+<p>yangdeMacBook-Pro:~ yang$ source <del>/.rvm/scripts/rvm<br>yangdeMacBook-Pro:</del> yang$ rvm list known<br>yangdeMacBook-Pro:~ yang$ rvm install “ruby-2.6.0”<br>yangdeMacBook-Pro:~ yang$ rvm use 2.6.0 –default<br>yangdeMacBook-Pro:~ yang$ sudo gem install cocoapods</p>
+<pre><code>
+
+
+
+</code></pre>
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://www.zhazhayang.top/archives/20200318-flutter-frontAndBackEnd/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1987,182 +2196,6 @@ func work() {
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.zhazhayang.top/archives/20190725-OS-X-AVAudioPlayer/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="渣渣羊">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="渣渣羊的进击">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/archives/20190725-OS-X-AVAudioPlayer/" class="post-title-link" itemprop="url">AVAudioPlayer的使用，Timer实现播放进度</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-
-          
-          
-          
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-07-25 22:51:39 / 修改时间：23:17:55" itemprop="dateCreated datePublished" datetime="2019-07-25T22:51:39+08:00">2019-07-25</time>
-            </span>
-          
-
-          
-            
-
-            
-          
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/OS-X/" itemprop="url" rel="index"><span itemprop="name">OS-X</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-              
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-            
-                <span class="post-meta-item-text">评论数：</span>
-                <a href="/archives/20190725-OS-X-AVAudioPlayer/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/archives/20190725-OS-X-AVAudioPlayer/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          <br>
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>AVAudioPlayer如其名，播放音频，但是它并没有显示播放进度的委托方法。这里采用Timer计时的方式实现播放进度条</p>
-<h2 id="使用音乐（或图片）资源"><a href="#使用音乐（或图片）资源" class="headerlink" title="使用音乐（或图片）资源"></a>使用音乐（或图片）资源</h2><p>在项目中新建一个Resource文件夹，将文件拖入，选择Copy items if needed<br>let resourceUrl = Bundle.main.url(forResource: “星月神话”, withExtension: “mp3”)获取资源</p>
-<h2 id="代码实例"><a href="#代码实例" class="headerlink" title="代码实例"></a>代码实例</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line">//  ViewController.swift</span><br><span class="line">//  TryPlayAudio</span><br><span class="line">//</span><br><span class="line">//  Created by yang on 2019/7/23.</span><br><span class="line">//  Copyright © 2019 yang. All rights reserved.</span><br><span class="line"></span><br><span class="line">import Cocoa</span><br><span class="line">import AVFoundation</span><br><span class="line"></span><br><span class="line">class ViewController: NSViewController &#123;</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    @IBOutlet weak var timeSlider: NSSlider!</span><br><span class="line">    @IBOutlet weak var timeLabel: NSTextField!</span><br><span class="line">    </span><br><span class="line">    var audioPlayer: AVAudioPlayer!</span><br><span class="line">    var data: NSData!</span><br><span class="line">    var timer: Timer!</span><br><span class="line">    override func viewDidLoad() &#123;</span><br><span class="line">        super.viewDidLoad()</span><br><span class="line"></span><br><span class="line">        // Do any additional setup after loading the view.</span><br><span class="line">        let resourceUrl = Bundle.main.url(forResource: &quot;星月神话&quot;, withExtension: &quot;mp3&quot;)</span><br><span class="line">        data = NSData(contentsOf: resourceUrl!)</span><br><span class="line">        do &#123;</span><br><span class="line">            audioPlayer = try AVAudioPlayer(data: data as Data) //本地音频可直接用contentOf: URL方法</span><br><span class="line">        &#125; catch &#123;</span><br><span class="line">            print(&quot;初始化失败&quot;)</span><br><span class="line">        &#125;</span><br><span class="line">        if audioPlayer != nil &#123;</span><br><span class="line">            audioPlayer.volume = 0.7    //调节音量</span><br><span class="line">            timeSlider.maxValue = audioPlayer.duration  //获取总时长</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    override var representedObject: Any? &#123;</span><br><span class="line">        didSet &#123;</span><br><span class="line">        // Update the view, if already loaded.</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    @objc func tickTime() &#123; //Timer调度的方法，每一个时间间隔执行一次，1秒/次即可实现进度条</span><br><span class="line">        timeSlider.integerValue += 1</span><br><span class="line">        timeLabel.stringValue = String(self.timeSlider.integerValue)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    @IBAction func play(_ sender: NSButton) &#123;</span><br><span class="line">        audioPlayer.play() //播放</span><br><span class="line">        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.tickTime), userInfo: nil, repeats: true) </span><br><span class="line">        /*timer初始化，timeInterval时间间隔；selector选择器，即每一个时间间隔向选择器发送一次消息（调用self.tickTime函数）；repeats一直重复，否则只执行一次*/</span><br><span class="line">        if audioPlayer.isPlaying &#123;</span><br><span class="line">            print(&quot;播放中&quot;)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    @IBAction func stop(_ sender: NSButton) &#123;</span><br><span class="line">        audioPlayer.stop() //停止播放</span><br><span class="line">        timer.invalidate()  //停止Timer</span><br><span class="line">        if !audioPlayer.isPlaying &#123;</span><br><span class="line">            print(&quot;停止&quot;)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h2><img src="/archives/20190725-OS-X-AVAudioPlayer/play.png">
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2209,7 +2242,7 @@ func work() {
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">26</span>
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2242,7 +2275,9 @@ func work() {
                     
                       
                     
-                    <span class="site-state-item-count">8</span>
+                      
+                    
+                    <span class="site-state-item-count">9</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -2277,7 +2312,9 @@ func work() {
                     
                       
                     
-                    <span class="site-state-item-count">9</span>
+                      
+                    
+                    <span class="site-state-item-count">10</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>

@@ -94,18 +94,20 @@
 
 
 
-  <meta name="description" content="前言主要记录ios学习与开发中遇到的小问题 frame与bounds区别frame.origin 当前视图在父视图中的位置bounds.origin 以当前视图左上角为原点构建坐标系，原点的值设置为该值而非(0,0)。影响的是其子视图的位置。">
-<meta name="keywords" content="ios">
+  <meta name="description" content="系统要求To install and run Flutter, your development environment must meet these minimum requirements:Operating Systems: macOS (64-bit)Disk Space: 2.8 GB (does not include disk space for IDE/tools).Tools:">
+<meta name="keywords" content="flutter">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ios 知识小点">
-<meta property="og:url" content="http://www.zhazhayang.top/archives/20190907-ios-note/index.html">
+<meta property="og:title" content="Mac OS配置flutter开发环境">
+<meta property="og:url" content="http://www.zhazhayang.top/archives/20200318-flutter-install/index.html">
 <meta property="og:site_name" content="渣渣羊的进击">
-<meta property="og:description" content="前言主要记录ios学习与开发中遇到的小问题 frame与bounds区别frame.origin 当前视图在父视图中的位置bounds.origin 以当前视图左上角为原点构建坐标系，原点的值设置为该值而非(0,0)。影响的是其子视图的位置。">
+<meta property="og:description" content="系统要求To install and run Flutter, your development environment must meet these minimum requirements:Operating Systems: macOS (64-bit)Disk Space: 2.8 GB (does not include disk space for IDE/tools).Tools:">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-07T14:43:18.787Z">
+<meta property="og:image" content="http://www.zhazhayang.top/archives/20200318-flutter-install/demo.png">
+<meta property="og:updated_time" content="2020-03-18T14:03:56.530Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ios 知识小点">
-<meta name="twitter:description" content="前言主要记录ios学习与开发中遇到的小问题 frame与bounds区别frame.origin 当前视图在父视图中的位置bounds.origin 以当前视图左上角为原点构建坐标系，原点的值设置为该值而非(0,0)。影响的是其子视图的位置。">
+<meta name="twitter:title" content="Mac OS配置flutter开发环境">
+<meta name="twitter:description" content="系统要求To install and run Flutter, your development environment must meet these minimum requirements:Operating Systems: macOS (64-bit)Disk Space: 2.8 GB (does not include disk space for IDE/tools).Tools:">
+<meta name="twitter:image" content="http://www.zhazhayang.top/archives/20200318-flutter-install/demo.png">
 
 
 
@@ -115,7 +117,7 @@
 
   
   
-  <link rel="canonical" href="http://www.zhazhayang.top/archives/20190907-ios-note/">
+  <link rel="canonical" href="http://www.zhazhayang.top/archives/20200318-flutter-install/">
 
 
 
@@ -125,7 +127,7 @@
   };
 </script>
 
-  <title>ios 知识小点 | 渣渣羊的进击</title>
+  <title>Mac OS配置flutter开发环境 | 渣渣羊的进击</title>
   
 
 
@@ -354,7 +356,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.zhazhayang.top/archives/20190907-ios-note/">
+    <link itemprop="mainEntityOfPage" href="http://www.zhazhayang.top/archives/20200318-flutter-install/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="渣渣羊">
@@ -371,7 +373,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">ios 知识小点
+          <h1 class="post-title" itemprop="name headline">Mac OS配置flutter开发环境
 
               
             
@@ -397,7 +399,7 @@
                 
               
 
-              <time title="创建时间：2019-09-07 17:00:03 / 修改时间：22:43:18" itemprop="dateCreated datePublished" datetime="2019-09-07T17:00:03+08:00">2019-09-07</time>
+              <time title="创建时间：2020-03-18 20:49:00 / 修改时间：22:03:56" itemprop="dateCreated datePublished" datetime="2020-03-18T20:49:00+08:00">2020-03-18</time>
             </span>
           
 
@@ -416,7 +418,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/ios/" itemprop="url" rel="index"><span itemprop="name">ios</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/flutter/" itemprop="url" rel="index"><span itemprop="name">flutter</span></a></span>
 
                 
                 
@@ -434,8 +436,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/archives/20190907-ios-note/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/archives/20190907-ios-note/" itemprop="commentCount"></span>
+                <a href="/archives/20200318-flutter-install/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/archives/20200318-flutter-install/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -474,9 +476,44 @@
       
 
       
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>主要记录ios学习与开发中遇到的小问题</p>
-<h2 id="frame与bounds区别"><a href="#frame与bounds区别" class="headerlink" title="frame与bounds区别"></a>frame与bounds区别</h2><p>frame.origin 当前视图在父视图中的位置<br>bounds.origin 以当前视图左上角为原点构建坐标系，原点的值设置为该值而非(0,0)。影响的是其子视图的位置。</p>
+        <h1 id="系统要求"><a href="#系统要求" class="headerlink" title="系统要求"></a>系统要求</h1><p>To install and run Flutter, your development environment must meet these minimum requirements:<br>Operating Systems: macOS (64-bit)<br>Disk Space: 2.8 GB (does not include disk space for IDE/tools).<br>Tools: Flutter depends on these command-line tools being available in your environment. bash、curl、git 2.x、mkdir、rm、unzip、which、zip</p>
+<p>我的系统为macOS Majave 10.14.6</p>
+<h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h1><p>官网：[<a href="https://flutter.dev/docs/get-started/install/macos]" rel="external nofollow noopener noreferrer" target="_blank">https://flutter.dev/docs/get-started/install/macos]</a><br>下载后解压到你想放置的目录</p>
+<h1 id="添加到环境变量"><a href="#添加到环境变量" class="headerlink" title="添加到环境变量"></a>添加到环境变量</h1><p>打开命令行工具</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yangdeMacBook-Pro:~ yang$ sudo vim ~/.bash_profile</span><br></pre></td></tr></table></figure>
 
+<p>在最下方添加flutter/bin的路径：<br>export PATH=/Users/yang/flutter/bin:$PATH<br>再生效配置并且检测是否成功</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yangdeMacBook-Pro:~ yang$ source ~/.bash_profile</span><br><span class="line">yangdeMacBook-Pro:~ yang$ echo $PATH</span><br><span class="line">yangdeMacBook-Pro:~ yang$ which flutter</span><br></pre></td></tr></table></figure>
+
+<h1 id="检测依赖的环境"><a href="#检测依赖的环境" class="headerlink" title="检测依赖的环境"></a>检测依赖的环境</h1><p>检测后根据其提示按装所需要的工具</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">yangdeMacBook-Pro:~ yang$ flutter doctor</span><br><span class="line">Doctor summary (to see all details, run flutter doctor -v):</span><br><span class="line">[✓] Flutter (Channel stable, v1.12.13+hotfix.8, on Mac OS X 10.14.6 18G84,</span><br><span class="line">    locale zh-Hans-CN)</span><br><span class="line">[✗] Android toolchain - develop for Android devices</span><br><span class="line">    ✗ Unable to locate Android SDK.</span><br><span class="line">      Install Android Studio from:</span><br><span class="line">      https://developer.android.com/studio/index.html</span><br><span class="line">      On first launch it will assist you in installing the Android SDK</span><br><span class="line">      components.</span><br><span class="line">      (or visit https://flutter.dev/setup/#android-setup for detailed</span><br><span class="line">      instructions).</span><br><span class="line">      If the Android SDK has been installed to a custom location, set</span><br><span class="line">      ANDROID_HOME to that location.</span><br><span class="line">      You may also want to add it to your PATH environment variable.</span><br><span class="line"></span><br><span class="line">[!] Xcode - develop for iOS and macOS (Xcode 11.3.1)</span><br><span class="line">    ✗ CocoaPods not installed.</span><br><span class="line">        CocoaPods is used to retrieve the iOS and macOS platform side&apos;s plugin</span><br><span class="line">        code that responds to your plugin usage on the Dart side.</span><br><span class="line">        Without CocoaPods, plugins will not work on iOS or macOS.</span><br><span class="line">        For more info, see https://flutter.dev/platform-plugins</span><br><span class="line">      To install:</span><br><span class="line">        sudo gem install cocoapods</span><br><span class="line">[!] Android Studio (not installed)</span><br><span class="line">[✓] VS Code (version 1.42.1)</span><br><span class="line">[!] Connected device</span><br><span class="line">    ! No devices available</span><br><span class="line"></span><br><span class="line">! Doctor found issues in 4 categories.</span><br></pre></td></tr></table></figure>
+
+<h1 id="配置桌面应用的开发"><a href="#配置桌面应用的开发" class="headerlink" title="配置桌面应用的开发"></a>配置桌面应用的开发</h1><p>从flutter 1.13开始，其作为alpha版本提供对macOS桌面的支持<br>官网链接:[<a href="https://flutter.dev/desktop]" rel="external nofollow noopener noreferrer" target="_blank">https://flutter.dev/desktop]</a><br>1、检测可用channels</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yangdeMacBook-Pro:hello yang$ flutter channel</span><br></pre></td></tr></table></figure>
+
+<p>Flutter channels:</p>
+<ul>
+<li>master<br>dev<br>beta<br>stable<br>2、切换channel到master, 并更新flutter sdk和依赖包<br>注：stable是稳定的分支，官方建议的<br>  master是开发分支，稳定性低许多<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yangdeMacBook-Pro:hello yang$ flutter channel master</span><br><span class="line">yangdeMacBook-Pro:hello yang$ flutter upgrade</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>3、开启macOS桌面支持</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yangdeMacBook-Pro:hello yang$ flutter config --enable-macos-desktop</span><br></pre></td></tr></table></figure>
+
+<p>4、测试</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">yangdeMacBook-Pro:~ yang$ mkdir hello</span><br><span class="line">yangdeMacBook-Pro:~ yang$ cd hello</span><br><span class="line">yangdeMacBook-Pro:hello yang$ flutter create .</span><br><span class="line">yangdeMacBook-Pro:hello yang$ flutter run -d macOS</span><br></pre></td></tr></table></figure>
+
+<img src="/archives/20200318-flutter-install/demo.png">
+
+<h1 id="安装CocoaPods遇到的问题"><a href="#安装CocoaPods遇到的问题" class="headerlink" title="安装CocoaPods遇到的问题"></a>安装CocoaPods遇到的问题</h1><p>安装命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">yangdeMacBook-Pro:~ yang$ sudo gem install cocoapods</span><br><span class="line">``` </span><br><span class="line">问题：</span><br><span class="line">ERROR:  Error installing cocoapods:</span><br><span class="line">	ERROR: Failed to build gem native extension.</span><br><span class="line">系统：</span><br><span class="line">macOS Majave 10.14.6</span><br><span class="line">ruby版本:</span><br><span class="line">ruby 2.3.7p456 (2018-03-28 revision 63024) [universal.x86_64-darwin18]</span><br><span class="line">解决：</span><br><span class="line">使用ruby-2.6.0</span><br><span class="line">过程：</span><br></pre></td></tr></table></figure>
+
+<p>yangdeMacBook-Pro:~ yang$ source <del>/.rvm/scripts/rvm<br>yangdeMacBook-Pro:</del> yang$ rvm list known<br>yangdeMacBook-Pro:~ yang$ rvm install “ruby-2.6.0”<br>yangdeMacBook-Pro:~ yang$ rvm use 2.6.0 –default<br>yangdeMacBook-Pro:~ yang$ sudo gem install cocoapods</p>
+<pre><code>
+
+
+
+</code></pre>
       
     </div>
 
@@ -502,7 +539,7 @@
         
         <div class="post-tags">
           
-            <a href="/tags/ios/" rel="tag"># ios</a>
+            <a href="/tags/flutter/" rel="tag"># flutter</a>
           
         </div>
       
@@ -515,8 +552,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/archives/20190814-OS-X-SynthesisAudio/" rel="next" title="Mac开发之合成两段音频">
-                <i class="fa fa-chevron-left"></i> Mac开发之合成两段音频
+              <a href="/archives/20200318-flutter-frontAndBackEnd/" rel="next" title="前后端交互初试">
+                <i class="fa fa-chevron-left"></i> 前后端交互初试
               </a>
             
           </div>
@@ -524,10 +561,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/archives/20190910-ios-PropertyList/" rel="prev" title="ios本地数据存储:属性列表">
-                ios本地数据存储:属性列表 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -717,7 +750,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#frame与bounds区别"><span class="nav-number">2.</span> <span class="nav-text">frame与bounds区别</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#系统要求"><span class="nav-number">1.</span> <span class="nav-text">系统要求</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#下载"><span class="nav-number">2.</span> <span class="nav-text">下载</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加到环境变量"><span class="nav-number">3.</span> <span class="nav-text">添加到环境变量</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#检测依赖的环境"><span class="nav-number">4.</span> <span class="nav-text">检测依赖的环境</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#配置桌面应用的开发"><span class="nav-number">5.</span> <span class="nav-text">配置桌面应用的开发</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装CocoaPods遇到的问题"><span class="nav-number">6.</span> <span class="nav-text">安装CocoaPods遇到的问题</span></a></li></ol></div>
             
 
           </div>
